@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Endgame.gd" type="Script" id=1]
+[ext_resource path="res://GFX/BG/bg_layer1.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/IBMPlexSansCondensed-Medium.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="Endgame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 413.0
+margin_top = 92.0
+margin_right = 867.0
+margin_bottom = 627.0
+alignment = 1
+
+[node name="Heading" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 454.0
+margin_bottom = 84.0
+grow_horizontal = 0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.160784, 0.254902, 0.878431, 1 )
+text = "Thanks & Credits"
+
+[node name="Content" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 88.0
+margin_right = 454.0
+margin_bottom = 535.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.160784, 0.254902, 0.878431, 1 )
+text = "Yo there! I only had 2 levels worth of creativity in me, so that's all there is to the game. And being honest, for a game made >21 hours, any more would've been outstaying the game's welcome. Hope you got some fun out of it, I had fun making it!
+
+Thanks to the following artists for the assets used in this game:
+Jump SFX - jalastram (https://opengameart.org/content/8-bit-jump-1)
+Background Music - Kat (https://opengameart.org/content/casual-classic-loop-8-bit)
+Clock SFX - christoph (https://opengameart.org/content/clock-ticking)
+2D Platforms & Character sprites - Kenney (https://kenney.nl/assets/platformer-art-deluxe ; https://kenney.nl/assets/topdown-shooter)
+
+If you feel like going going through it again press Enter or Spacebar
+If not Esc will set you free. Thansk again, and have a good one."
+autowrap = true
+

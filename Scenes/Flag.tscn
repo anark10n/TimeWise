@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Flag.gd" type="Script" id=1]
+
+[node name="Flag" type="Area2D"]
+collision_layer = 4
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -64.0702, 64.4757, 75.7562, -22.6459, -64.1049, -66.9907 )
+

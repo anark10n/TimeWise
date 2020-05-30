@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
+[ext_resource path="res://Tiles/Tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SFX/Casual 8-bit.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/StartFlag.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/FinishFlag.tscn" type="PackedScene" id=7]
+
+[node name="TemplateLevel" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+collision_layer = 2
+format = 1
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 244.858, 772.03 )
+collision_mask = 1
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+autoplay = true
+
+[node name="GUI" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
+
+[node name="TimeBoosters" type="Node" parent="."]
+
+[node name="StartFlag" parent="." instance=ExtResource( 6 )]
+position = Vector2( 448, 768 )
+
+[node name="FinishFlag" parent="." instance=ExtResource( 7 )]
+position = Vector2( 640, 768 )
+
